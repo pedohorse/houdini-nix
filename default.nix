@@ -67,11 +67,12 @@ buildFHSEnv rec {
       "bin/houdini"  # houdini flavours
       "bin/houdinicore"
       "bin/houdinifx"
-      "bin/husk"  # hydra rendereing tool
       "bin/hgpuinfo"  # houdini ocl config tool
       "bin/hotl"  # hda/otl manipulation tool
       "bin/hython"  # hython
       "bin/hkey"  # license administration
+      "bin/husk"  # hydra rendereing tool
+      "bin/mantra"  # mantra renderer
       "houdini/sbin/sesinetd"
     ];
   in ''
