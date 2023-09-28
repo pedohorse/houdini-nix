@@ -42,7 +42,7 @@
         );
       });
 
-      default = "houdini-19_5_569";
+      default = houdini-19_5_569;
     };
   };
 }
