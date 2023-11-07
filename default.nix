@@ -95,6 +95,12 @@ buildFHSEnv rec {
   ];
 
   runScript = writeScript "${name}-wrapper" ''
-    exec "$@"
+    if [[ "$1" != */* ]]; then
+      arg1=${unwrapped}/bin/$1
+    else
+      arg1=$1
+    fi
+    shift
+    exec "$arg1" "$@"
   '';
 }
