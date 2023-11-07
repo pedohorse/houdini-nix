@@ -31,4 +31,12 @@
       );
     });
   }
+  {
+    suffix = "19_5_773";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides "19.5.773" "9.3" "cdaceb31659a8a21e315ff9d6fa826fa745eb6cf59435525e77fa45ec6de822a"
+      );
+    });
+  }
 ]
