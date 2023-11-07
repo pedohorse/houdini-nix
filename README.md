@@ -8,9 +8,20 @@ To be able to build houdini you need to download a corresponding build installer
 
 Add downloaded installer to the store with `nix-store --add-fixed sha256 houdini-19.0.720-linux_x86_64_gcc9.3.tar.gz` (with proper filename of course)
 
-then you can install and build corresponding houdini version with
+then you can run corresponding houdini version without cloning repo or downloading anything
+with simple command:
+
+`nix run github:pedohorse/houdini-nix#houdini-19_0_720 houdini`
+
+> [!Note]
+> Further down I will refer to this flake as if it was in the current directory,
+> so instead of `github:pedohorse/houdini-nix` I'll write just `.`
+
+You can build the flake's output instead with: 
 
 `nix build .#houdini-19_0_720`
+
+and have some houdini binaries available in `./result/bin`
 
 # Running
 
@@ -18,7 +29,8 @@ There are several ways you can run houdini with this flake.
 
 ## Building and using ./result
 
-After building, you will have the usual `result` symlink created. all (hopefully) important binaries are exposed in `./result/bin` directory
+After building with command like `nix build .#houdini-19_0_720`, 
+you will have the usual `result` symlink created. all (hopefully) important binaries are exposed in `./result/bin` directory.
 
 This creats a more usual file structure, to which you can point your pipeline usual tools, that expect to run binaries directly
 
@@ -34,16 +46,6 @@ You can also run the flake's outputs directly, as in
 > [!Note]
 > not all houdini's binaries are exposed now, only the ones deemed "useful", so feel free to open issue in case something you need is missing
 
-# Notes:
-
-currently this flake provides onlt the following versions:
-
-* 19.0.720
-* 19.5.569
-* 19.5.640
-* 19.5.716
-* 19.5.773
-
 ## On sesinetd:
 
 `sesinetd` is houdini's licensing server. There is a special set of flake outputs to run it.
@@ -56,4 +58,14 @@ for example, an easy way to run license server from houdini version 19.5.733, as
 `nix run .#sesinetd-19_5_773 -- ./hlicenses --user artist --group artist -D`
 
 this will run license server in foreground (`-D` flag) in the terminal, so you can kill it with Ctrl+C
+
+# Notes:
+
+currently this flake provides onlt the following versions:
+
+* 19.0.720
+* 19.5.569
+* 19.5.640
+* 19.5.716
+* 19.5.773
 
