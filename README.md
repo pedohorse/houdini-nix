@@ -68,4 +68,5 @@ currently this flake provides onlt the following versions:
 * 19.5.640
 * 19.5.716
 * 19.5.773
+* 20.0.506
 
