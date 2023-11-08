@@ -39,4 +39,12 @@
       );
     });
   }
+  {
+    suffix = "20_0_506";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides "20.0.506" "11.2" "10dcb695bf9bb6407ccfd91c67858d69864208ee97e1e9afe216abf99db549f5"
+      );
+    });
+  }
 ]
