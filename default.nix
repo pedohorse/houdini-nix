@@ -1,4 +1,4 @@
-{ lib, stdenv, writeScript, callPackage, buildFHSEnv, unwrapped ? callPackage ./runtime.nix {} }:
+{ lib, stdenv, writeScript, ncurses5, callPackage, buildFHSEnv, unwrapped ? callPackage ./runtime.nix {} }:
 
 buildFHSEnv rec {
   name = "houdini-${unwrapped.version}";
@@ -30,7 +30,6 @@ buildFHSEnv rec {
     bintools  # needed for ld and other tools, so ctypes can find/load sos from python
     ocl-icd  # needed for opencl
     numactl  # needed by hfs ocl backend
-    ncurses5  # needed by hfs ocl backend
     zstd  # needed from 20.0
   ] ++ (with xorg; [
     libICE
@@ -102,6 +101,10 @@ buildFHSEnv rec {
       arg1=$1
     fi
     shift
+
+    # ncurses5 is needed by hfs ocl backend
+    # workaround for this issue: https://github.com/NixOS/nixpkgs/issues/89769
+    export LD_LIBRARY_PATH=${lib.makeLibraryPath [ncurses5]}:$LD_LIBRARY_PATH
     exec "$arg1" "$@"
   '';
 }
