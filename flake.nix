@@ -27,5 +27,9 @@
           "sesinetd-${suffix}" = sesinetdBase.override overriddenVersion;
         }) (import ./versionOverrides.nix {inherit unwrapped getOverrides;})
       );
+    nixosModules = rec {
+      sesinetd = import ./nixos_modules/sesinetd.nix;
+      default = sesinetd;
+    };
   };
 }
