@@ -82,7 +82,7 @@ buildFHSEnv rec {
       mkdir -p $out/$(dirname $executable)
 
       echo "#!${stdenv.shell}" >> $out/$executable
-      echo "$WRAPPER ${unwrapped}/$executable \"\$@\"" >> $out/$executable
+      echo "exec $WRAPPER ${unwrapped}/$executable \"\$@\"" >> $out/$executable
     done
 
     cd $out
