@@ -77,4 +77,56 @@
       );
     });
   }
+  {
+    suffix = "20_0_547";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.0.547";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "5ace10747b59917d0597af59704bbe3f68c4f5e92421a1226bf3e0303163da9c";
+        }
+      );
+    });
+  }
+  {
+    suffix = "20_0_590";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.0.590";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "b2b7f822713021192aeb785729c07a3d8c33aef8321e14e2f5dd080002bc4505";
+        }
+      );
+    });
+  }
+  {
+    suffix = "20_0_625";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.0.625";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "36883e4c65893895bbfc91c3d105a3b68e25b7c3634eb3fc27ef848769e54785";
+        }
+      );
+    });
+  }
+  {
+    suffix = "20_0_653";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.0.653";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "7ee8dc97341ef29741e6d0007f10979af0d52ff4af438b4349323cddd35812bd";
+        }
+      );
+    });
+  }
 ]

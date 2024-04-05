@@ -69,4 +69,7 @@ currently this flake provides onlt the following versions:
 * 19.5.716
 * 19.5.773
 * 20.0.506
-
+* 20.0.547
+* 20.0.590
+* 20.0.625
+* 20.0.653
