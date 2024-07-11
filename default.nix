@@ -107,4 +107,14 @@ buildFHSEnv rec {
     export LD_LIBRARY_PATH=${lib.makeLibraryPath [ncurses5]}:$LD_LIBRARY_PATH
     exec "$arg1" "$@"
   '';
+
+  meta = with lib; {
+    description = "3D animation application software";
+    homepage = "https://www.sidefx.com";
+    license = licenses.unfree;
+    platforms = [ "x86_64-linux" ];
+    mainProgram = "houdini";
+    hydraPlatforms = [ ]; # requireFile src's should be excluded
+    maintainers = with maintainers; [ canndrew kwohlfahrt pedohorse ];
+  };
 }

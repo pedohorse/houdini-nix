@@ -1,4 +1,4 @@
-{ lib, stdenv, bc, version, src, eulaDate }:
+{ stdenv, bc, version, src, eulaDate }:
 stdenv.mkDerivation {
   inherit version src;
   pname = "houdini-runtime";
@@ -19,13 +19,4 @@ stdenv.mkDerivation {
   '';
 
   dontFixup = true;
-
-  meta = with lib; {
-    description = "3D animation application software";
-    homepage = "https://www.sidefx.com";
-    license = licenses.unfree;
-    platforms = platforms.linux;
-    hydraPlatforms = [ ]; # requireFile src's should be excluded
-    maintainers = with maintainers; [ canndrew kwohlfahrt ];
-  };
 }
