@@ -9,8 +9,8 @@
       system = "x86_64-linux";
     };
     unwrapped = pkgs.callPackage ./runtime-build.nix;
-    getOverrides = { version, eulaDate, gccVersion, hash }: {
-      inherit version eulaDate;
+    getOverrides = { version, eulaDate, gccVersion, hash, outputHash ? null }: {
+      inherit version eulaDate outputHash;
       src = pkgs.requireFile {
         name = "houdini-${version}-linux_x86_64_gcc${gccVersion}.tar.gz";
         sha256 = hash;

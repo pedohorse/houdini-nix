@@ -177,6 +177,7 @@
           eulaDate = "2021-10-13";
           gccVersion = "11.2";
           hash = "sha256-QwPCU7E5yoJvWsiRUMBSAhEJYckbFTrQa1S4fto8dy0=";
+          outputHash = "sha256-br23Z81dyLuTfu6KCZrzhz39e/sfSZPn4bdbZuw/208=";
         }
       );
     });
