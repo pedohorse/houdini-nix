@@ -4,7 +4,8 @@ all important changes are pushed to nixpkgs
 
 # Building
 
-To be able to build houdini you need to download a corresponding build installer from [sidefx site](https://www.sidefx.com/download/daily-builds/?production=true)
+To be able to build houdini you need to download a corresponding build installer from [sidefx site](https://www.sidefx.com/download/daily-builds/?production=true),
+because SideFX does not allow to do that automatically without registration.
 
 Add downloaded installer to the store with `nix-store --add-fixed sha256 houdini-19.0.720-linux_x86_64_gcc9.3.tar.gz` (with proper filename of course)
 
