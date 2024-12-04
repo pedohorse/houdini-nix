@@ -13,13 +13,9 @@ with simple command:
 
 `nix run github:pedohorse/houdini-nix#houdini-19_0_720 houdini`
 
-> [!Note]
-> Further down I will refer to this flake as if it was in the current directory,
-> so instead of `github:pedohorse/houdini-nix` I'll write just `.`
-
 You can build the flake's output instead with: 
 
-`nix build .#houdini-19_0_720`
+`nix build github:pedohorse/houdini-nix#houdini-19_0_720`
 
 and have some houdini binaries available in `./result/bin`
 
@@ -29,7 +25,7 @@ There are several ways you can run houdini with this flake.
 
 ## Building and using ./result
 
-After building with command like `nix build .#houdini-19_0_720`, 
+After building with command like `nix build github:pedohorse/houdini-nix#houdini-19_0_720`, 
 you will have the usual `result` symlink created. all (hopefully) important binaries are exposed in `./result/bin` directory.
 
 This creats a more usual file structure, to which you can point your pipeline usual tools, that expect to run binaries directly
@@ -38,9 +34,9 @@ This creats a more usual file structure, to which you can point your pipeline us
 
 You can also run the flake's outputs directly, as in
 
-* `nix run .#houdini-19_5_569 houdini`
-* `nix run .#houdini-19_5_569 houdinifx`
-* `nix run .#houdini-19_5_569 houdinicore`
+* `nix run github:pedohorse/houdini-nix#houdini-19_5_569 houdini`
+* `nix run github:pedohorse/houdini-nix#houdini-19_5_569 houdinifx`
+* `nix run github:pedohorse/houdini-nix#houdini-19_5_569 houdinicore`
 * etc
 
 > [!Note]
@@ -51,11 +47,11 @@ You can also run the flake's outputs directly, as in
 `sesinetd` is houdini's licensing server. There is a special set of flake outputs to run it.
 You need to provide the script with a path to a writeable directory where the licenses are to be stored.
 
-`nix run .#sesinetd-19_5_569 -- /path/to/lic/dir --other sesinetd -arg uments`
+`nix run github:pedohorse/houdini-nix#sesinetd-19_5_569 -- /path/to/lic/dir --other sesinetd -arg uments`
 
 for example, an easy way to run license server from houdini version 19.5.733, as your user named `artist`, and store licenses in relative dir `./hlicenses` you run:
 
-`nix run .#sesinetd-19_5_773 -- ./hlicenses --user artist --group artist -D`
+`nix run github:pedohorse/houdini-nix#sesinetd-19_5_773 -- ./hlicenses --user artist --group artist -D`
 
 this will run license server in foreground (`-D` flag) in the terminal, so you can kill it with Ctrl+C
 
