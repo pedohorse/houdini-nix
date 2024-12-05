@@ -60,6 +60,7 @@
           eulaDate = "2021-10-13";
           gccVersion = "9.3";
           hash = "cdaceb31659a8a21e315ff9d6fa826fa745eb6cf59435525e77fa45ec6de822a";
+          outputHash = "sha256-p+Uevl2oGqhT21lkV/v+re9wQbelRKzzJ9XeQWY1JL0=";
         }
       );
     });
@@ -125,6 +126,7 @@
           eulaDate = "2021-10-13";
           gccVersion = "11.2";
           hash = "7ee8dc97341ef29741e6d0007f10979af0d52ff4af438b4349323cddd35812bd";
+          outputHash = "sha256-cmUn/TRWYj/0ex4I0PAa9a8l3tumb92gG2IfyiGusag=";
         }
       );
     });
