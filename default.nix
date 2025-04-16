@@ -1,4 +1,4 @@
-{ lib, stdenv, writeScript, ncurses5, callPackage, buildFHSEnv, unwrapped ? callPackage ./runtime.nix {} }:
+{ lib, stdenv, writeScript, ncurses5, callPackage, buildFHSEnv, unwrapped ? callPackage ./runtime.nix {}, extraFhsPkgs ? (pkgs: []) }:
 
 buildFHSEnv rec {
   name = "houdini-${unwrapped.version}";
@@ -9,7 +9,7 @@ buildFHSEnv rec {
   # houdini needs to communicate with hserver process that it seem to be checking to be present in running processes
   unsharePid = false;
 
-  targetPkgs = pkgs: with pkgs; [
+  targetPkgs = pkgs: (with pkgs; [
     libGLU
     libGL
     alsa-lib
@@ -31,7 +31,7 @@ buildFHSEnv rec {
     ocl-icd  # needed for opencl
     numactl  # needed by hfs ocl backend
     zstd  # needed from 20.0
-  ] ++ (with xorg; [
+  ]) ++ (with pkgs.xorg; [
     libICE
     libSM
     libXmu
@@ -56,7 +56,7 @@ buildFHSEnv rec {
     xcbutilcursor
     xcbutilkeysyms
     xcbutilwm
-  ]);
+  ]) ++ (extraFhsPkgs pkgs);
 
   passthru = {
     inherit unwrapped;
