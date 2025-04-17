@@ -76,4 +76,6 @@ currently this flake provides onlt the following versions:
 * 20.5.370
 * 20.5.410
 * 20.5.445
+* 20.5.487
+* 20.5.550
 
