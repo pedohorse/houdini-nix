@@ -226,4 +226,46 @@
       );
     });
   }
+  {
+    suffix = "20_5_522";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.5.522";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "sha256-sQZCh9dRQaPQE8D6pezfcp3zoPjqLkDTzz8tFx+Q6D0=";
+          outputHash = "sha256-Uwv6j+dikthcH0fRTy/U2pTGqUDNmuB/syRycPQdVOw=";
+        }
+      );
+    });
+  }
+  {
+    suffix = "20_5_550";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.5.550";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "sha256-3WqZkSw7dhwqcHe8kPOJylvs1W1u5D0X21Vo943366E=";
+          outputHash = "sha256-DG1raIDPxFv/IQM8qmHFu8hJEba9t2UyCL7O8jpKjGY=";
+        }
+      );
+    });
+  }
+  {
+    suffix = "20_5_613";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.5.613";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "sha256-WzjPlPt6h8k5hhTK7wtuQ1eg+2VuAIuE5xW6+yjhj98=";
+          outputHash = "sha256-61BktXdBc6yGMxWmzvS/zD2Ge/zWE6BWPEALr1IWLcw=";
+        }
+      );
+    });
+  }
 ]
