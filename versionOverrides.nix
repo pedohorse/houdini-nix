@@ -278,4 +278,23 @@
       ];
     });
   }
+  {
+    suffix = "21_0_438";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "21.0.438";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "sha256-zyfAuUmEK+mlva+hMWm7CzLI5qnVQMecS2wud12kWEs=";
+          outputHash = "sha256-jq4ywBBBfQN1yRDDPi5cDf5aka7m4Oko3vaGuWfn8pw=";
+        }
+      );
+      extraFhsPkgs = pkgs: with pkgs; [
+        libdrm
+        xorg.libxshmfence
+        xorg.libxkbfile
+      ];
+    });
+  }
 ]
