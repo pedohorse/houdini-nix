@@ -241,6 +241,20 @@
     });
   }
   {
+    suffix = "20_5_684";
+    overriddenVersion = (super: {
+      unwrapped = unwrapped (
+        getOverrides {
+          version = "20.5.684";
+          eulaDate = "2021-10-13";
+          gccVersion = "11.2";
+          hash = "sha256-cyFeeKBCV1EGdgruQ71EnEJOVndn1SKSiCtD6WRc878=";
+          outputHash = "sha256-mAX4jSdV0/DC+48O7d1hgmKjC1leKm1QgSBMbyAxyFs=";
+        }
+      );
+    });
+  }
+  {
     suffix = "21_0_322";
     overriddenVersion = (super: {
       unwrapped = unwrapped (
