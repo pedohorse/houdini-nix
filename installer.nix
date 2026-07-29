@@ -25,7 +25,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = requireFile {
     name = "install_houdini_launcher.sh";
     sha256 = finalAttrs.srcHash;
-    url = "https://www.sidefx.com/download/daily-builds/?production=true";
+    url = "https://www.sidefx.com/download/daily-builds/?show_launcher=true&production=true&python3=true&linux=true";
   };
   
   nativeBuildInputs = [
