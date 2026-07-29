@@ -26,6 +26,15 @@
           "houdini-${suffix}" = houdiniBase.override overriddenVersion;
           "sesinetd-${suffix}" = sesinetdBase.override overriddenVersion;
         }) (import ./versionOverrides.nix {inherit unwrapped getOverrides;})
+      ) //
+      pkgs.lib.attrsets.mergeAttrsList (
+        builtins.map ({version, srcHash}:
+        let
+          suffix = builtins.replaceStrings ["."] ["_"] version;
+        in{
+          "installer-${suffix}" = pkgs.callPackage ./installer.nix { inherit version srcHash; };
+          "launcher-${suffix}" = pkgs.callPackage ./installer.nix { inherit version srcHash; installLauncher=true; };
+        }) (import ./launcherVersionOverrides.nix)
       );
   };
 }
