@@ -56,6 +56,13 @@ for example, an easy way to run license server from houdini version 19.5.733, as
 
 this will run license server in foreground (`-D` flag) in the terminal, so you can kill it with Ctrl+C
 
+## Houdini Launcher
+
+Experimental support for Launcher/Installer has been added, however due to how launcher currently works,
+it's not very usable as an immutable derivation result.
+
+you can use it through `installer-<version>` or `launcher-<version>` flake attributes
+
 # Notes:
 
 currently this flake provides onlt the following versions:
